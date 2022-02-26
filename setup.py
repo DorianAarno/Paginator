@@ -1,6 +1,6 @@
 from setuptools import setup
 
-with open("README.md", "r") as f:
+with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
@@ -11,12 +11,12 @@ setup(
     long_description_content_type='text/markdown',
     py_modules=["Paginator"],
     package_dir={'': "src"},
-    url="",
+    url="https://github.com/DorianAarno/Paginator",
     author="Aarno Dorian",
     author_email="aarnodorian56@gmail.com",
     download_url = "https://github.com/DorianAarno/Paginator/archive/refs/tags/v1.0.tar.gz",
+    license = "MIT",
     classifiers=[
-        'License :: MIT License',
         'Intended Audience :: Developers',
         'Natural Language :: English',
         'Operating System :: OS Independent',
