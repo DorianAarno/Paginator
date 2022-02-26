@@ -12,8 +12,9 @@ setup(
     py_modules=["Paginator"],
     package_dir={'': "src"},
     url="",
-    author="AarnoDorian",
+    author="Aarno Dorian",
     author_email="aarnodorian56@gmail.com",
+    download_url = "https://github.com/DorianAarno/Paginator/archive/refs/tags/v1.0.tar.gz",
     classifiers=[
         'License :: MIT License',
         'Intended Audience :: Developers',
@@ -26,5 +27,8 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Topic :: Utilities',
         'Typing :: Typed',
-    ]
+    ],
+      install_requires=[
+          'disnake'
+      ]
 )

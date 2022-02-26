@@ -1,6 +1,6 @@
 from disnake import *
 
-class PaginationButtons(ui.View):
+class CreatePaginator(ui.View):
     """
     Paginator for Embeds.
     Parameters:
