@@ -4,7 +4,7 @@ with open("README.md", "r") as f:
     long_description = f.read()
 
 setup(
-    name="disnake-paginator",
+    name="disnake-paginate",
     version="1.0",
     description="A simple Embed Paginator for your projects made with disnake.",
     long_description=long_description,
