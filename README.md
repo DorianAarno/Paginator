@@ -28,5 +28,5 @@ await ctx.send(embed=embeds[0], view=CreatePaginator(ctx, embeds, author_id, tim
 * Consider giving this repository a ⭐, It is highly appreciated! 
 
 # License
-This repository has been made available via [MIT]() License.
+This repository has been made available via [MIT](https://github.com/DorianAarno/Paginator/blob/main/LICENSE) License.
   
