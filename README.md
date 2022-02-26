@@ -12,6 +12,7 @@ pip install disnake-paginate
 ```py
 from Paginate import CreatePaginator
 from disnake import Embed
+
 embeds = [
   Embed(description="First Embed"),
   Embed(description="Second Embed"),
@@ -21,6 +22,7 @@ embeds = [
 timeout = 120.0 # Optional
 author_id = ctx.author.id # Optional, If not specified, anyone can interact with pagination buttons.
 await ctx.send(embed=embeds[0], view=CreatePaginator(ctx, embeds, author_id, timeout))
+
 ```
 
 # Contributing
