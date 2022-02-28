@@ -10,7 +10,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     py_modules=["Paginator"],
-    package_dir={'': "src"},
+    packages=['src'],
     url="https://github.com/DorianAarno/Paginator",
     author="Aarno Dorian",
     author_email="aarnodorian56@gmail.com",
