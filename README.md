@@ -3,7 +3,7 @@ A simple Embed Paginator developed for projects made with [disnake](ttps://githu
 
 # Installation
 You can use [pip](https://pip.pypa.io/en/stable/) to install this library.
-```py
+```
 pip install git+https://github.com/DorianAarno/Paginator.git
 ```
 
