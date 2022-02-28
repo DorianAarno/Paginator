@@ -9,7 +9,7 @@ setup(
     description="A simple Embed Paginator for your projects made with disnake.",
     long_description=long_description,
     long_description_content_type='text/markdown',
-    packages=['src.Paginate'],
+    py_modules=['Paginate'],
     url="https://github.com/DorianAarno/Paginator",
     author="Aarno Dorian",
     author_email="aarnodorian56@gmail.com",
