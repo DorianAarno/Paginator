@@ -10,7 +10,7 @@ pip install disnake-paginate
 # Usage
 ### Guide
 ```py
-from Paginate import CreatePaginator
+from Paginator import CreatePaginator
 from disnake import Embed
 
 embeds = [
