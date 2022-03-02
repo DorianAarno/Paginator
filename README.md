@@ -25,6 +25,9 @@ author_id = ctx.author.id # Optional, If not specified, anyone can interact with
 await ctx.send(embed=embeds[0], view=CreatePaginator(ctx, embeds, author_id, timeout))
 ```
 
+### Example
+You may view implementation of this library in [PointsBot](https://github.com/DorianAarno/PointsBot).
+
 # Contributing
 * Pull requests and issues are welcome.
 * Consider giving this repository a ⭐, It is highly appreciated!
