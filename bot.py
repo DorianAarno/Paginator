@@ -17,4 +17,4 @@ async def test(ctx):
 
     await ctx.send(embed=embeds[0], view=Paginate.CreatePaginator(embeds, ))
 
-bot.run("ODYwNDAxMDg2Mjc1MTI1MjQ4.Gm3f7o.TU9oWQbdxHIV41xVbIpJtOQce_-Fa9A_OMTcHM")
+bot.run("TOKEN")
