@@ -23,23 +23,27 @@ class CreatePaginator(ui.View):
         self.CurrentEmbed = 0
 
     @ui.button(emoji="⬅️", style=ButtonStyle.grey)
-    async def next(self, button, inter):
-        try:
-            if inter.author.id != self.author:
-                return await inter.send("You cannot interact with these buttons.", ephemeral=True)
-            await inter.response.edit_message(embed=self.embeds[self.CurrentEmbed+1])
-        except:
-            await inter.send('Unable to change the page.', ephemeral=True)
-        finally:
-            self.CurrentEmbed += 1
-
-    @ui.button(emoji="➡️", style=ButtonStyle.grey)
     async def previous(self, button, inter):
         try:
-            if inter.author.id != self.author:
+            if inter.author.id != self.author and self.author != 123:
                 return await inter.send("You cannot interact with these buttons.", ephemeral=True)
-            await inter.response.edit_message(embed=self.embeds[self.CurrentEmbed-1])
+            if self.CurrentEmbed:
+                await inter.response.edit_message(embed=self.embeds[self.CurrentEmbed-1])
+                self.CurrentEmbed = self.CurrentEmbed - 1
+            else:
+                raise()
+                
         except:
             await inter.send('Unable to change the page.', ephemeral=True)
-        finally:
-            self.CurrentEmbed = self.CurrentEmbed - 1
+    
+    @ui.button(emoji="➡️", style=ButtonStyle.grey)
+    async def next(self, button, inter):
+        try:
+            if inter.author.id != self.author and self.author != 123:
+                return await inter.send("You cannot interact with these buttons.", ephemeral=True)
+
+            await inter.response.edit_message(embed=self.embeds[self.CurrentEmbed+1])
+            self.CurrentEmbed += 1
+            
+        except:
+            await inter.send('Unable to change the page.', ephemeral=True)
