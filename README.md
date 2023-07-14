@@ -1,6 +1,8 @@
 # Disnake Paginator
 A simple Embed Paginator developed for projects made with [disnake](ttps://github.com/DisnakeDev/disnake), a fork of [discord.py](https://github.com/Rapptz/discord.py).
 
+![pagination](https://github.com/DorianAarno/Paginator/assets/88921711/834c30be-0056-4d1c-bc38-dce5dc51e440)
+
 # Installation
 You can use [pip](https://pip.pypa.io/en/stable/) to install this library.
 ```
