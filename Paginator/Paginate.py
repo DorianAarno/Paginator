@@ -1,4 +1,6 @@
 from disnake import *
+import logging
+
 
 class CreatePaginator(ui.View):
     """
@@ -22,28 +24,39 @@ class CreatePaginator(ui.View):
         self.author = author
         self.CurrentEmbed = 0
 
+    # Configure logging
+    logging.basicConfig(level=logging.INFO)
+    logger = logging.getLogger(__name__)
+
     @ui.button(emoji="⬅️", style=ButtonStyle.grey)
     async def previous(self, button, inter):
+        if not inter.response.is_done():
+            await inter.response.defer(ephemeral=True)
         try:
             if inter.author.id != self.author and self.author != 123:
-                return await inter.send("You cannot interact with these buttons.", ephemeral=True)
+                return await inter.followup.send("You cannot interact with these buttons.", ephemeral=True)
+
             if self.CurrentEmbed:
-                await inter.response.edit_message(embed=self.embeds[self.CurrentEmbed-1])
-                self.CurrentEmbed = self.CurrentEmbed - 1
+                await inter.followup.edit_message(embed=self.embeds[self.CurrentEmbed-1])
+                self.CurrentEmbed -= 1
             else:
-                raise()
-                
-        except:
-            await inter.send('Unable to change the page.', ephemeral=True)
-    
+                raise ValueError("No previous embed available")
+
+        except Exception as e:
+            logger.error(f"Error in Paginator 'previous': {e}")
+            await inter.followup.send('Unable to change the page.', ephemeral=True)
+
     @ui.button(emoji="➡️", style=ButtonStyle.grey)
     async def next(self, button, inter):
+        if not inter.response.is_done():
+            await inter.response.defer(ephemeral=True)
         try:
             if inter.author.id != self.author and self.author != 123:
-                return await inter.send("You cannot interact with these buttons.", ephemeral=True)
+                return await inter.followup.send("You cannot interact with these buttons.", ephemeral=True)
 
-            await inter.response.edit_message(embed=self.embeds[self.CurrentEmbed+1])
+            await inter.followup.edit_message(embed=self.embeds[self.CurrentEmbed+1])
             self.CurrentEmbed += 1
-            
-        except:
-            await inter.send('Unable to change the page.', ephemeral=True)
+
+        except Exception as e:
+            logger.error(f"Error in Paginator 'next': {e}")
+            await inter.followup.send('Unable to change the page.', ephemeral=True)
